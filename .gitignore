@@ -1,0 +1,11 @@
+# Node Modules (Avoid uploading local binaries to Render)
+node_modules/
+
+# Local SQLite Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Environment & Log files
+.env
+*.log
