@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>POS Terminal - Cart</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="sidebar">
+    <div class="brand">📦 Enterprise POS</div>
+    <nav>
+      <a href="/">📦 Inventory & Products</a>
+      <a href="/cart" class="active">🛒 POS Terminal</a>
+      <a href="/bill">🧾 Generate Invoice</a>
+    </nav>
+  </div>
+
+  <div class="main-content">
+    <div class="header">
+      <h1>POS Terminal</h1>
+    </div>
+
+    <div class="pos-container">
+      <div class="card">
+        <h3>Available Products</h3>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th>Price</th>
+                <th>Stock</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="posProductList">
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Current Order Cart</h3>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th>Qty</th>
+                <th>Total</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="posCartList">
+            </tbody>
+          </table>
+        </div>
+
+        <div style="margin-top: 20px; text-align: right;">
+          <h4>Subtotal: ₹<span id="posSubtotal">0.00</span></h4>
+        </div>
+
+        <div style="margin-top: 20px; display: flex; flex-direction: column; gap: 10px;">
+          <button id="clearCartBtn" class="btn btn-danger">Clear Cart</button>
+          <a href="/bill" class="btn btn-success">Proceed to Billing 🧾</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/script.js"></script>
+</body>
+</html>

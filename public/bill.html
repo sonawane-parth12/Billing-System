@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tax Invoice - Billing System</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="sidebar">
+    <div class="brand">📦 Enterprise POS</div>
+    <nav>
+      <a href="/">📦 Inventory & Products</a>
+      <a href="/cart">🛒 POS Terminal</a>
+      <a href="/bill" class="active">🧾 Generate Invoice</a>
+    </nav>
+  </div>
+
+  <div class="main-content">
+    <div class="header">
+      <h1>Checkout & Tax Invoice</h1>
+    </div>
+
+    <div class="card customer-input-section" style="max-width: 600px; margin: 0 auto 25px auto;">
+      <h3>Customer & Payment Details</h3>
+      <div class="form-group">
+        <label>Customer Name</label>
+        <input type="text" id="custName" placeholder="Walk-in Customer">
+      </div>
+      <div class="form-group">
+        <label>Payment Mode</label>
+        <select id="payMode">
+          <option value="Cash">Cash</option>
+          <option value="UPI">UPI / Online</option>
+          <option value="Card">Credit/Debit Card</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Discount Amount (₹)</label>
+        <input type="number" id="discountAmount" value="0" min="0" step="0.01">
+      </div>
+      <button id="checkoutBtn" class="btn btn-success" style="width: 100%;">Finalize & Print Invoice</button>
+    </div>
+
+    <div id="invoiceReceipt" class="bill-receipt" style="display: none;">
+      <div style="text-align: center; margin-bottom: 20px;">
+        <h2>TAX INVOICE</h2>
+        <p style="font-size: 0.85rem; color: #64748b;">Enterprise POS Solutions Inc.</p>
+      </div>
+      <hr style="margin-bottom: 15px; border: 0; border-top: 1px solid #e2e8f0;">
+
+      <p><strong>Invoice ID:</strong> #<span id="invId"></span></p>
+      <p><strong>Customer:</strong> <span id="invCust"></span></p>
+      <p><strong>Payment Mode:</strong> <span id="invPay"></span></p>
+      <br>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Price</th>
+            <th>Qty</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody id="invItems">
+        </tbody>
+      </table>
+
+      <div class="bill-summary-box">
+        <p>Subtotal: ₹<span id="invSubtotal">0.00</span></p>
+        <p>Discount: -₹<span id="invDiscount">0.00</span></p>
+        <p>GST (18%): ₹<span id="invGst">0.00</span></p>
+        <h2>Grand Total: ₹<span id="invGrandTotal">0.00</span></h2>
+      </div>
+
+      <div style="margin-top: 25px; display: flex; gap: 10px;" class="print-actions">
+        <button onclick="window.print()" class="btn btn-primary" style="flex: 1;">Print Receipt 🖨️</button>
+        <a href="/cart" class="btn btn-secondary" style="flex: 1;">New Order</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/script.js"></script>
+</body>
+</html>

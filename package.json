@@ -1,0 +1,13 @@
+{
+  "name": "online-billing-system",
+  "version": "1.0.0",
+  "description": "Online Billing System using Node.js, Express, and SQLite",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.22.3",
+    "sqlite3": "^5.1.7"
+  }
+}

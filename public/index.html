@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Billing System - Dashboard & Inventory</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="sidebar">
+    <div class="brand">📦 Enterprise POS</div>
+    <nav>
+      <a href="/" class="active">📦 Inventory & Products</a>
+      <a href="/cart">🛒 POS Terminal</a>
+      <a href="/bill">🧾 Generate Invoice</a>
+    </nav>
+  </div>
+
+  <div class="main-content">
+    <div class="header">
+      <h1>Products & Inventory Management</h1>
+    </div>
+
+    <div class="card-grid">
+      <div class="card">
+        <h3>Add New Product</h3>
+        <form id="addProductForm">
+          <div class="form-group">
+            <label>SKU / Barcode</label>
+            <input type="text" id="prodSku" placeholder="e.g. PRD-1001" required>
+          </div>
+          <div class="form-group">
+            <label>Item Name</label>
+            <input type="text" id="prodName" placeholder="e.g. Wireless Mouse" required>
+          </div>
+          <div class="form-group">
+            <label>Category</label>
+            <input type="text" id="prodCategory" placeholder="e.g. Electronics" required>
+          </div>
+          <div class="form-group">
+            <label>Price (₹)</label>
+            <input type="number" id="prodPrice" step="0.01" min="0" placeholder="0.00" required>
+          </div>
+          <div class="form-group">
+            <label>Stock Quantity</label>
+            <input type="number" id="prodStock" min="0" placeholder="0" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Save Product</button>
+        </form>
+      </div>
+
+      <div class="card" style="grid-column: span 2;">
+        <h3>Product Inventory</h3>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>SKU</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Stock</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="productsTableBody">
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/script.js"></script>
+</body>
+</html>
